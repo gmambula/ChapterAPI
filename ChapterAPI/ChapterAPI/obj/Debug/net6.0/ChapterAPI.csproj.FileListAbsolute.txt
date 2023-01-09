@@ -58,3 +58,4 @@ C:\Users\PC\Desktop\Gabriel Mambula\Documentos\gabriel\7 - Projetos eu\Full desc
 C:\Users\PC\Desktop\Gabriel Mambula\Documentos\gabriel\7 - Projetos eu\Full desck\webapi\ChapterAPI\ChapterAPI\obj\Debug\net6.0\ChapterAPI.pdb
 C:\Users\PC\Desktop\Gabriel Mambula\Documentos\gabriel\7 - Projetos eu\Full desck\webapi\ChapterAPI\ChapterAPI\obj\Debug\net6.0\ChapterAPI.genruntimeconfig.cache
 C:\Users\PC\Desktop\Gabriel Mambula\Documentos\gabriel\7 - Projetos eu\Full desck\webapi\ChapterAPI\ChapterAPI\obj\Debug\net6.0\ref\ChapterAPI.dll
+C:\Users\PC\Desktop\Gabriel Mambula\Documentos\gabriel\7 - Projetos eu\Full desck\webapi\ChapterAPI\ChapterAPI\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

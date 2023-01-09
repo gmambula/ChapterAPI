@@ -1,6 +1,7 @@
 ﻿using ChapterAPI.Interfaces;
 using ChapterAPI.Models;
 using ChapterAPI.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,20 +16,21 @@ namespace ChapterAPI.Controllers
     public class LivroController : ControllerBase
     {
 
-        private readonly LivroRepository _livroRepository;
+        private readonly ILivroRepository _ilivroRepository;
 
-        public LivroController(LivroRepository livro) 
+        public LivroController(ILivroRepository livro) 
         {
-            _livroRepository = livro;
+            _ilivroRepository = livro;
         }
 
 
         [HttpGet]
+        
         public IActionResult Listar() 
         {
             try
             {
-                return Ok(_livroRepository.Ler());
+                return Ok(_ilivroRepository.Ler());
             }
             catch (Exception error)
             {
@@ -38,11 +40,12 @@ namespace ChapterAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "7")]
         public IActionResult Cadastrar(Livro livro) 
         {
             try
             {
-                _livroRepository.Cadastrar(livro);
+                _ilivroRepository.Cadastrar(livro);
                 return Ok(livro);
             }
             catch (Exception e)
@@ -57,7 +60,7 @@ namespace ChapterAPI.Controllers
         {
             try
             {
-                _livroRepository.Atualizar(id, livro);
+                _ilivroRepository.Atualizar(id, livro);
                 return StatusCode(204);
             }
             catch(Exception e)
@@ -71,7 +74,7 @@ namespace ChapterAPI.Controllers
         {
             try 
             {
-                _livroRepository.Deletar(id);
+                _ilivroRepository.Deletar(id);
                 return StatusCode(204);
             }
             catch (Exception e)
@@ -85,7 +88,7 @@ namespace ChapterAPI.Controllers
         {
             try
             {
-                Livro livro = _livroRepository.BuscarPorId(id);
+                Livro livro = _ilivroRepository.BuscarPorId(id);
                 
                 if (livro == null) 
                 {
